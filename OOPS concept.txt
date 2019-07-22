@@ -1,0 +1,194 @@
+1)oop.java(class)
+
+package oop;
+
+public class Oop {
+
+   
+   public static void main(String[] args) {
+       /** vehicle vehicle1=new vehicle();
+        System.out.println(vehicle1.getName());
+        vehicle1.setName("city");
+        System.out.println(vehicle1.getName());
+         System.out.println(vehicle1.count);
+        
+        
+        
+        vehicle vehicle2=new vehicle("civic", "black","2010","honda","900");
+        System.out.println(vehicle2.getColor());
+        vehicle2.setColor("green");
+        System.out.println(vehicle2.getColor());
+        System.out.println(vehicle2.getSpeed());
+         System.out.println(vehicle1.count);
+         System.out.println(vehicle.getVehicle());  
+      
+     */ // TODO code application logic here
+     Car car1=new Car("civic","black","2012","honda","900",true,false);
+     System.out.println(car1.getledScreen());
+     System.out.println(car1.getName());
+     
+     vehicle vehicle=new vehicle("civic","black","2012","honda","900");
+     System.out.println(vehicle.getInfo());
+     
+    }
+    
+}
+
+
+
+2)vehicle.java
+
+
+package oop;
+
+public class vehicle {
+    private String name="";
+     private String color="";
+    private String model="";
+     private String company="";
+     private String engine="800";
+     public static int count=0;
+    
+    public vehicle() {
+    count++;}
+    
+    public vehicle(String name, String color, String model, String company,String engine){
+        this.name=name;
+        this.color=color;
+        this.model=model;
+        this.company=company;
+        this.engine=engine;
+        count++;
+
+    }    
+    
+    public void setName(String name){
+    this.name=name;
+    
+    }
+     public void setColor(String color){
+    this.color=color;
+    
+     }
+      public void setModel(String model){
+    this.model=model;
+    
+    }
+       public void SetCompany(String company){
+    this.company=company;
+    
+    }
+        public void SetEngine(String engine){
+    this.engine=engine;
+    
+    }
+       
+        public String getName(){
+     return this.name;
+    
+    }
+     public String getColor(){
+     return this.color;
+    
+    }
+       public String getModel(){
+     return this.model;
+    
+    }
+     public String getCompany(){
+     return this.company;
+    
+    }
+      public String getEngine(){
+     return this.engine;
+    
+    }
+      public int getSpeed(){
+          String a = getEngine();
+          if(a == "800"){
+          return 90;
+          }else{
+              return 120;
+          }
+      
+      }
+      public String getInfo(){
+          return "this is a vehicle";
+      }
+      
+     
+      public static String getVehicle(){
+          return "you have set the name and color ot that vehicle";
+      
+      
+      }
+}
+
+
+3)car.java
+
+package oop;
+
+public class Car extends vehicle{
+    private boolean powerSteering = false;
+    private boolean ledScreen = true;
+    
+    public Car(String name, String color, String model, String company,String engine,boolean powerSteering,boolean ledScreen){
+        super(name,color,model,company,engine);
+        this.powerSteering=powerSteering;
+        this.ledScreen=ledScreen;
+    }
+    public String getName(){
+    return "Name of you vehicle is:" + super.getName(); 
+     
+    }
+     public void setpowerSteering(boolean powerSteering){
+    this.powerSteering=powerSteering;
+    
+    }
+     public void setledScreen(boolean ledScreen){
+    this.ledScreen=ledScreen;
+    
+     }
+     public boolean getpowerSteering(){
+   return this.powerSteering;
+    
+    }
+     public boolean getledScreen(){
+    return this.ledScreen;
+    
+     }
+      public String getInfo(){
+          return "this is a car";
+      }
+}
+
+
+
+
+
+
+4)Bike.java
+
+package oop;
+
+public class Bike extends vehicle {
+    private boolean fourStroke=true;
+  public  Bike(String name, String color, String model, String company,String engine,boolean fourStroke){
+      super(name,color,model,company,engine);
+      this.fourStroke=fourStroke;
+  }
+  public void fourStroke(boolean fourStroke){
+    this.fourStroke=fourStroke;
+    
+    }
+    public boolean getfourStroke(){
+   return this.fourStroke;
+    
+}
+    public String getInfo(){
+          return "this is a Bike";
+      }
+}
+
+
